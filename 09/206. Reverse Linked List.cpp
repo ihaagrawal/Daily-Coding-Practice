@@ -42,3 +42,18 @@ public:
         return head;
     }
 };
+
+//Better Approach 2 (Space: O(n)->recursive stack, Time: O(n))
+class Solution {
+public:
+
+    ListNode* reverseList(ListNode* head) {
+        if(!head || !head->next) return head;
+        
+        ListNode* newHead=reverseList(head->next);
+        ListNode* front=head->next;
+        front->next=head;
+        head->next=nullptr;
+        return newHead;
+    }
+};
