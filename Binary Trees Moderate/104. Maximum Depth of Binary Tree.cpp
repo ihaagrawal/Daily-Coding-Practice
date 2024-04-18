@@ -1,7 +1,7 @@
 // 104. Maximum Depth of Binary Tree (EASY)
 // https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 
-// Space: O(height), Time: O(n)
+// Space: O(height)->Recursive Stack, Time: O(n)
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
