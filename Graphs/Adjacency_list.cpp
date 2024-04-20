@@ -1,26 +1,7 @@
 #include <iostream>
+#include <vector>
 #include <unordered_map>
-#include <list>
 using namespace std;
-
-class graph{
-    public:
-
-        unordered_map<int, list<int>> adj;
-        void addEdge(int u, int v, bool direction){
-            adj[u].push_back(v);
-            if(direction==0) adj[v].push_back(u);
-        }
-
-        void print(){
-            for(auto i:adj){
-                cout << i.first << " -> ";
-                for(auto j:i.second){
-                    cout << j << ", ";
-                }cout << endl;
-            }
-        }
-};
 
 int main(){
     int n;
@@ -31,12 +12,26 @@ int main(){
     cout << "Enter the number of edges: " << endl;
     cin >> m;
 
-    graph g;
-    for(int i=0;i<m;i++){
+    bool direction;
+    cout << "Enter 0 for undirected and 1 for directed: " << endl;
+    cin >> direction;
+
+    //storing the adjacency list using a map
+    unordered_map<int, vector<int>> adj;
+    for(int i=1;i<=m;i++){
         int u, v;
         cin >> u >> v;
-        g.addEdge(u, v, 0);
+        adj[u].push_back(v);
+        if(direction==0) adj[v].push_back(u);
     }
-    g.print();
+
+    //printing out the list
+    for(auto i:adj){
+        cout << i.first << " -> ";
+        for(auto j:i.second){
+            cout << j << ", ";
+        }cout << endl;
+    }
+
     return 0;
 }
