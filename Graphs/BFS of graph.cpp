@@ -5,7 +5,7 @@
 class Solution {
   public:
     vector<int> bfsOfGraph(int V, vector<int> adj[]) {
-        vector<bool> visited(V, false);  //visited array to keep track if node is visited or not
+        vector<bool> visited(V+1, false);  //visited array to keep track if node is visited or not
         vector<int> result;
         queue<int> q;
         q.push(0);
