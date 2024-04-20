@@ -1,5 +1,6 @@
 // BFS of graph (EASY)
 // https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1
+// https://www.naukri.com/code360/problems/bfs-in-graph_973002?leftPanelTabValue=PROBLEM
 
 class Solution {
   public:
