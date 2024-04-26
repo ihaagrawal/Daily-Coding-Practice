@@ -1,6 +1,7 @@
 // 127. Word Ladder (HARD)
 // https://leetcode.com/problems/word-ladder/description/
 
+//O(n^4)
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
@@ -29,6 +30,41 @@ public:
                 }
             }
             level++;
+        }
+        return 0;
+    }
+};
+
+//O(n^3)
+class Solution {
+public:
+    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+        unordered_set<string> word(wordList.begin(), wordList.end());
+        queue<pair<string, int>> q;
+        
+        if(word.find(endWord)==word.end()) return 0;
+
+        q.push({beginWord, 1});
+        word.erase(beginWord);
+
+        while(!q.empty()){
+            string current=q.front().first;
+            int steps=q.front().second;
+            q.pop();
+
+            if(current==endWord) return steps;
+
+            for(int i=0;i<current.length();i++){
+                int curr=current[i];
+                for(char c='a';c<='z';c++){
+                    current[i]=c;
+                    if(word.find(current)!=word.end()){
+                        q.push({current, steps+1});
+                        word.erase(current);
+                    }
+                }
+                current[i]=curr;
+            }
         }
         return 0;
     }
