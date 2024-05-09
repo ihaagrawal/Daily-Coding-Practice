@@ -1,6 +1,3 @@
-// Disjoint Set Data Structures
-
-
 #include <iostream>
 #include <vector>
 using namespace std;
