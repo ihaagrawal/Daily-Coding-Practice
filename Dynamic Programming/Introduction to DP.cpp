@@ -4,7 +4,8 @@
 class Solution {
   public:
     const long long int MOD = 1e9+7;
-    
+
+  
     long long int helper(int n, vector<int>& dp) {
         if(n <= 1) return dp[n] = n;
         
@@ -12,12 +13,19 @@ class Solution {
         
         return dp[n] = (helper(n-1, dp) + helper(n-2, dp)) % MOD;
     }
-    
+
+    //Memoisation
+    //Time: O(n)
+    //Space: O(n) + O(n)
+    //       array   recursive stack
     long long int topDown(int n){
         vector<int> dp(n+1, -1);
         return helper(n, dp);
     }
-    
+
+    //Tabulation
+    //Time: O(n)
+    //Space: O(n)
     long long int bottomUp(int n) {
         vector<long long int> dp1(n+1, -1);
         
