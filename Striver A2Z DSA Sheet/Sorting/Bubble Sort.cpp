@@ -1,6 +1,8 @@
 // Bubble Sort (EASY)
 // https://www.geeksforgeeks.org/problems/bubble-sort/1
 
+//Time: O(n^2)
+//Space: O(1)
 class Solution {
   public:
     // Function to sort the array using bubble sort algorithm.
