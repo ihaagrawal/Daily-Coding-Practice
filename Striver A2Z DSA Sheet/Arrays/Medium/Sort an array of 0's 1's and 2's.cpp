@@ -33,3 +33,24 @@ public:
     }
 };
 
+
+//Optimal: Using Dutch National Flag Algorithm (Two Pointers)
+//Time: O(n)
+//Space: O(1)
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int n = nums.size();
+        int left = 0, right = n-1, i = 0;
+        while(i <= right){
+            if(nums[i] == 0){
+                swap(nums[left], nums[i]);
+                left++;
+                i++;
+            }else if(nums[i] == 2){
+                swap(nums[right], nums[i]);
+                right--;
+            }else i++;
+        }
+    }
+};
