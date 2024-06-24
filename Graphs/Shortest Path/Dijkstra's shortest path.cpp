@@ -34,10 +34,12 @@ vector<int> dijkstra(vector<vector<int>>& edges, int n, int m, int src) {
             }
         }
     }
+  return dist;
+}
 
 
-    //Using Set
-    #include <bits/stdc++.h>
+//Using Set
+#include <bits/stdc++.h>
 using namespace std;
 
 vector<int> dijkstra(vector<vector<int>>& edges, int n, int m, int src) {
@@ -79,7 +81,6 @@ vector<int> dijkstra(vector<vector<int>>& edges, int n, int m, int src) {
 
 
 
-    return dist;
-}
+  
 
 
