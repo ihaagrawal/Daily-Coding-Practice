@@ -3,6 +3,7 @@
 
 
 //Brute: Generate all the permutations, sort them and look for the next permutation 
+//Gives TLE for large input
 //Time: O(n!*n)
 //Space: O(n^2)
 class Solution {
